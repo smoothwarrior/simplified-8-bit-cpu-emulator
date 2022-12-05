@@ -1,5 +1,5 @@
 [package]
-name = "simplified 8-bit emulator"
+name = "simplified_8-bit_emulator"
 version = "0.1.0"
 edition = "2021"
 

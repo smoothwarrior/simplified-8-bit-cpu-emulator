@@ -1,4 +1,4 @@
-use my_project::CPU;
+use simplified_8_bit_emulator::CPU;
 
 fn print_cpu_stats(cpu: &CPU) {
 	println!("\n");

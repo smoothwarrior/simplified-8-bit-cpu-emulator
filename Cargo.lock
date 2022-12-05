@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "my_project"
+name = "simplified_8-bit_emulator"
 version = "0.1.0"
