@@ -42,6 +42,10 @@ This CPU has 4 8-bit registers
 
 256 bytes of memory or ram
 
+# Known issues
+
+Overflow errors are possible from addition or subtraction
+
 # Planned features
 
 16-bit memory addressing
