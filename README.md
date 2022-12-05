@@ -57,7 +57,7 @@ File parsing for execution from a text file or other programming language file
 # Getting started
 
 
-1. First create a variable: "let cpu: CPU = CPU::new();"
+1a. First create a variable: "let cpu: CPU = CPU::new();"
 
 2a. You can make a list of reg ID's: "let a: usize = 0;"
 
