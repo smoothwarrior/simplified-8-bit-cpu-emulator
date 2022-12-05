@@ -64,19 +64,29 @@ impl CPU {
 	pub fn add_reg_reg(&mut self, reg1: usize, reg2: usize) {
 		let val1 = self.registers.registers[reg1].data;
 		let val2 = self.registers.registers[reg2].data;
-		let result = val1 + val2;
-		self.registers.registers[0].data = result;
-		println!("{:?} added to {:?}", self.registers.registers[reg1].name, self.registers.registers[reg2].name);
-		println!("{:?} now holds {:?}", self.registers.registers[0].name, result);
+		if val1.checked_add(val2) == None {
+			println!("\nERROR: Addition Overflow error\n");
+			println!("Overflow occurances not yet handled\n");
+		} else {
+			let result = val1 + val2;
+			self.registers.registers[0].data = result;
+			println!("{:?} added to {:?}", self.registers.registers[reg1].name, self.registers.registers[reg2].name);
+			println!("{:?} now holds {:?}", self.registers.registers[0].name, result);
+		}
 	}
 	// subtracts two registers storing the result in the first register
 	pub fn sub_reg_reg(&mut self, reg1: usize, reg2: usize) {
 		let val1 = self.registers.registers[reg1].data;
 		let val2 = self.registers.registers[reg2].data;
-		let result = val1 - val2;
-		self.registers.registers[0].data = result;
-		println!("{:?} subtracted from {:?}", self.registers.registers[reg1].name, self.registers.registers[reg2].name);
-		println!("{:?} now holds {:?}", self.registers.registers[0].name, result);
+		if val1.checked_sub(val2) == None {
+			println!("\nERROR: registers do not support negative values\n");
+			println!("Overflow occurances not yet handled\n");
+		} else {
+			let result = val1 - val2;
+			self.registers.registers[0].data = result;
+			println!("{:?} subtracted from {:?}", self.registers.registers[reg1].name, self.registers.registers[reg2].name);
+			println!("{:?} now holds {:?}", self.registers.registers[0].name, result);
+		}
 	}
 	// or's two registers storing the result in the first register
 	pub fn or_reg_reg(&mut self, reg1: usize, reg2: usize) {

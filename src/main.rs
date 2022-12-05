@@ -74,7 +74,14 @@ fn main() {
 	print_cpu_stats(&cpu);                   // this function will print current status of the CPU's registers
 	print_memory_data(&cpu);                 // this function will print current status of the CPU's memory
 
-
+	cpu.reset_all_data();
+	cpu.update_reg_data(a, 5);
+	cpu.update_reg_data(b, 10);
+	cpu.sub_reg_reg(a, b);
+	cpu.update_reg_data(a, 255);
+	cpu.update_reg_data(b, 1);
+	cpu.add_reg_reg(a, b);
+	print_cpu_stats(&cpu);
 
 	println!("\nProgram end\nShutting down virtualized CPU...\nGoodbye");
 }
